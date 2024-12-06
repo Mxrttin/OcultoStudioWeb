@@ -1,10 +1,129 @@
-header{
-    z-index: 100;
-}
-.d-item{
-    height: 600px;
+body {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    margin: 0; 
+    background: linear-gradient(to right, black, #7c4dff); 
+    color: white; 
+    font-family: 'Arial', 'Helvetica', sans-serif; 
+    line-height: 1.6; /* Mejora la legibilidad */
 }
 
-.d-img{
-    height: 100%;
+.inicio, .galeria {
+    width: 100%; 
+    text-align: center; 
+    padding: 2rem; 
+    box-sizing: border-box; 
+}
+
+.inicio {
+    max-width: 1200px;
+    padding: 4rem 2rem;
+}
+
+.inicio h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: 1.5rem;
+}
+
+.inicio p {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    margin: 0 auto;
+    max-width: 800px;
+    line-height: 1.7;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media screen and (max-width: 768px) {
+    .inicio p, .galeria-item p {
+        max-width: 95%; /* Texto más ancho en pantallas pequeñas */
+    }
+
+    .galeria-contenedor {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos pequeños */
+    }
+}
+
+.galeria {
+    padding: 3rem 0;
+}
+
+.galeria-contenedor {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.galeria-item {
+    flex-basis: 300px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: scale(1.05);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.galeria-item h3 {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    color:white
+}
+
+.galeria-item p {
+    font-size: 1.1rem;
+    color: white;
+    padding: 0 1.5rem 1.5rem;
+    text-align: center;
+    max-width: 90%;
+}
+
+.footer{
+    margin-bottom: 5rem;
+}
+
+.download {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.download h2 {
+    font-size: 2em;
+    color: white; /* Verde oscuro */
+    margin-bottom: 20px;
+}
+
+.download-button {
+    background-color: #000000; /* Verde oscuro */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-bottom: 100px;
+}
+
+.download-button:hover {
+    background-color: white; /* Verde más oscuro */
+
+}
+
+.qr-code {
+    width: 400px; /* Ajusta el tamaño del QR */
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
